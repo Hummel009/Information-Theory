@@ -57,7 +57,7 @@ class GUI : JFrame() {
 				if (!Utils.isPrime(keyP.toLong()) || !Utils.isPrime(keyQ.toLong())) {
 					throw Exception()
 				}
-				if (!(keyB < keyP * keyQ && keyB > 0 && keyB < 10533)){
+				if (!(keyB < keyP * keyQ && keyB > 0 && keyB < 10533)) {
 					throw Exception()
 				}
 				if (!(keyP > 3 && keyQ > 3511 && keyP * keyQ > 256)) {

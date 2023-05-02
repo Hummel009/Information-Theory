@@ -82,7 +82,8 @@ class GUI : JFrame() {
 		keyFieldK: JTextField,
 		keyFieldM: JTextField
 	) {
-		val error = error(inputField, outputField, keyFieldQ, keyFieldP, keyFieldH, keyFieldX, keyFieldY, keyFieldK, keyFieldM)
+		val error =
+			error(inputField, outputField, keyFieldQ, keyFieldP, keyFieldH, keyFieldX, keyFieldY, keyFieldK, keyFieldM)
 
 		if (keyFieldY.text.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Select Y", "Error", JOptionPane.ERROR_MESSAGE)
@@ -141,7 +142,8 @@ class GUI : JFrame() {
 		keyFieldK: JTextField,
 		keyFieldM: JTextField
 	) {
-		val error = error(inputField, outputField, keyFieldQ, keyFieldP, keyFieldH, keyFieldX, keyFieldY, keyFieldK, keyFieldM)
+		val error =
+			error(inputField, outputField, keyFieldQ, keyFieldP, keyFieldH, keyFieldX, keyFieldY, keyFieldK, keyFieldM)
 
 		if (keyFieldX.text.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Select X", "Error", JOptionPane.ERROR_MESSAGE)
