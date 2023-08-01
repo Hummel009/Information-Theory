@@ -27,7 +27,7 @@ fun main() {
 }
 
 class GUI : JFrame() {
-	val alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+	val alphabet: String = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 	private var vigenere = true
 
 	private fun selectPath(pathField: JTextField) {

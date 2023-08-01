@@ -23,9 +23,9 @@ fun main() {
 }
 
 class GUI : JFrame() {
-	var srcFileBin = ""
-	var resFileBin = ""
-	var keyStream = ""
+	var srcFileBin: String = ""
+	var resFileBin: String = ""
+	var keyStream: String = ""
 
 	private fun selectPath(pathField: JTextField) {
 		val fileChooser = JFileChooser()
