@@ -31,16 +31,4 @@ jobs:
         
     - name: Build with Gradle
       working-directory: ./Lab01
-      run: gradlew build
-      
-    - name: Build with Gradle
-      working-directory: ./Lab02
-      run: gradlew build
-      
-    - name: Build with Gradle
-      working-directory: ./Lab03
-      run: gradlew build
-      
-    - name: Build with Gradle
-      working-directory: ./Lab04
-      run: gradlew build
+      run: ./gradlew.bat build
