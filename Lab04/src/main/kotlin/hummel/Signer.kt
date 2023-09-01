@@ -129,13 +129,8 @@ class Signer(
 
 		if (r == v) {
 			when (arg) {
-				SignMode.RUS, SignMode.ENG, SignMode.ASC -> {
-					File(outputPath).writeText(msg as String)
-				}
-
-				SignMode.BIN -> {
-					File(outputPath).writeBytes(msg as ByteArray)
-				}
+				SignMode.RUS, SignMode.ENG, SignMode.ASC -> File(outputPath).writeText(msg as String)
+				SignMode.BIN -> File(outputPath).writeBytes(msg as ByteArray)
 			}
 		}
 		return CortegeSeven(hash, r, s, w, u1, u2, v)

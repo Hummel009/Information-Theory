@@ -21,10 +21,10 @@ class Encoder(
 		val bufSrcFile = StringBuilder()
 		val bufGenkey = StringBuilder()
 		val bufResFile = StringBuilder()
+		val currKey = StringBuilder()
 		for (i in srcBytes.indices) {
 			bufSrcFile.append(Integer.toBinaryString(srcBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
 
-			val currKey = StringBuilder()
 			repeat(bites) {
 				currKey.append(reg.generateKeyBit())
 			}
@@ -39,6 +39,8 @@ class Encoder(
 			bufGenkey.append(currKey.toString())
 			srcBytes[i] = srcBytes[i] xor keyByte.toByte()
 			bufResFile.append(Integer.toBinaryString(srcBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
+
+			currKey.clear()
 		}
 		File(pathToResFile).writeBytes(srcBytes)
 		gui.srcFileBin = bufSrcFile.toString().replace(" ", "")
