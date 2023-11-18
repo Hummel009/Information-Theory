@@ -1,5 +1,7 @@
 package hummel
 
+import com.formdev.flatlaf.FlatLightLaf
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.EventQueue
@@ -10,14 +12,10 @@ import javax.swing.*
 import javax.swing.border.EmptyBorder
 
 fun main() {
+	FlatLightLaf.setup()
 	EventQueue.invokeLater {
 		try {
-			for (info in UIManager.getInstalledLookAndFeels()) {
-				if ("Windows Classic" == info.name) {
-					UIManager.setLookAndFeel(info.className)
-					break
-				}
-			}
+			UIManager.setLookAndFeel(FlatGitHubDarkIJTheme())
 			val frame = GUI()
 			frame.isVisible = true
 		} catch (e: Exception) {
@@ -107,7 +105,7 @@ class GUI : JFrame() {
 	init {
 		title = "Vigenere & Column Cipher Machine"
 		defaultCloseOperation = EXIT_ON_CLOSE
-		setBounds(100, 100, 500, 250)
+		setBounds(100, 100, 450, 210)
 
 		val contentPanel = JPanel()
 		contentPanel.border = EmptyBorder(5, 5, 5, 5)

@@ -1,5 +1,7 @@
 package hummel
 
+import com.formdev.flatlaf.FlatLightLaf
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.EventQueue
@@ -9,14 +11,10 @@ import javax.swing.*
 import javax.swing.border.EmptyBorder
 
 fun main() {
+	FlatLightLaf.setup()
 	EventQueue.invokeLater {
 		try {
-			for (info in UIManager.getInstalledLookAndFeels()) {
-				if ("Windows Classic" == info.name) {
-					UIManager.setLookAndFeel(info.className)
-					break
-				}
-			}
+			UIManager.setLookAndFeel(FlatGitHubDarkIJTheme())
 			val frame = GUI()
 			frame.isVisible = true
 		} catch (e: Exception) {
@@ -167,17 +165,17 @@ class GUI : JFrame() {
 				null
 			}
 
-			if (cortege != null) {
-				val hash = cortege.value1
-				val r = cortege.value2
-				val s = cortege.value3
-				val y = cortege.value4
+			cortege?.let {
+				val hash = it.value1
+				val r = it.value2
+				val s = it.value3
+				val y = it.value4
 				JOptionPane.showMessageDialog(
 					this, "Hash = $hash, r = $r, s = $s, y = $y", "Message", JOptionPane.INFORMATION_MESSAGE
 				)
 				keyFieldX.text = "0"
 				keyFieldY.text = "$y"
-			} else {
+			} ?: run {
 				JOptionPane.showMessageDialog(
 					this, "Broken file", "Error", JOptionPane.ERROR_MESSAGE
 				)
