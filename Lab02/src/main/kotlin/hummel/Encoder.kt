@@ -16,33 +16,33 @@ class Encoder(
 	fun encode() {
 		val reg = Register(polynomialPowers, initialKey)
 		val srcBytes = File(pathToSrcFile).readBytes()
+		val resBytes = srcBytes.copyOf()
 
 		val bites = 8
 		val bufSrcFile = StringBuilder()
 		val bufGenkey = StringBuilder()
 		val bufResFile = StringBuilder()
 		val currKey = StringBuilder()
-		for (i in srcBytes.indices) {
-			bufSrcFile.append(Integer.toBinaryString(srcBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
+		srcBytes.forEachIndexed { i, byte ->
+			bufSrcFile.append(Integer.toBinaryString(byte.toInt() and 0xFF).format("%8s", "0") + " ")
 
-			repeat(bites) {
-				currKey.append(reg.generateKeyBit())
-			}
+			repeat(bites) { currKey.append(reg.generateKeyBit()) }
 
 			var keyByte = 0
 
-			for (j in currKey.toString().indices) {
-				val bp = (currKey.toString()[j].digitToInt()).toByte() * 2.0.pow((bites - 1 - j)).toInt().toByte()
-				keyByte = (keyByte + bp)
+			currKey.toString().indices.asSequence().map { j ->
+				2.0.pow((bites - 1 - j)).toInt().toByte() * (currKey.toString()[j].digitToInt()).toByte()
+			}.forEach {
+				keyByte = (keyByte + it)
 			}
 
 			bufGenkey.append(currKey.toString())
-			srcBytes[i] = srcBytes[i] xor keyByte.toByte()
-			bufResFile.append(Integer.toBinaryString(srcBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
+			resBytes[i] = byte xor keyByte.toByte()
+			bufResFile.append(Integer.toBinaryString(resBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
 
 			currKey.clear()
 		}
-		File(pathToResFile).writeBytes(srcBytes)
+		File(pathToResFile).writeBytes(resBytes)
 		gui.srcFileBin = bufSrcFile.toString().replace(" ", "")
 		gui.keyStream = bufGenkey.toString().replace(" ", "")
 		gui.resFileBin = bufResFile.toString().replace(" ", "")

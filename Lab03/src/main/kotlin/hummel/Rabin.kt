@@ -3,11 +3,7 @@ package hummel
 import java.io.File
 
 class Rabin(
-	private var p: Int,
-	private var q: Int,
-	private var b: Int,
-	private var input: String,
-	private var output: String
+	private var p: Int, private var q: Int, private var b: Int, private var input: String, private var output: String
 ) {
 	private val n = p * q
 
@@ -15,9 +11,8 @@ class Rabin(
 		val listPlain = File(input).readBytes().map { it.toInt() and 0xFF }
 
 		val listCipher = ArrayList<Int>()
-		for (m in listPlain) {
-			val c = (m * (m + b)) % n
-			listCipher.add(c)
+		listPlain.mapTo(listCipher) {
+			(it * (it + b)) % n
 		}
 		File(output).writeText(listCipher.toString())
 	}

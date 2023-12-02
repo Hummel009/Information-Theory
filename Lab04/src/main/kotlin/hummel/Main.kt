@@ -105,14 +105,14 @@ class GUI : JFrame() {
 				null
 			}
 
-			if (cortege != null) {
-				val hash = cortege.value1
-				val r = cortege.value2
-				val s = cortege.value3
-				val w = cortege.value4
-				val u1 = cortege.value5
-				val u2 = cortege.value6
-				val v = cortege.value7
+			cortege?.let {
+				val hash = it.value1
+				val r = it.value2
+				val s = it.value3
+				val w = it.value4
+				val u1 = it.value5
+				val u2 = it.value6
+				val v = it.value7
 				JOptionPane.showMessageDialog(
 					this,
 					"Hash = $hash, R = $r, S = $s, W = $w, U1 = $u1, U2 = $u2, V = $v\r\n${r == v}",
@@ -121,7 +121,7 @@ class GUI : JFrame() {
 				)
 				keyFieldX.text = "45"
 				keyFieldY.text = "0"
-			} else {
+			} ?: run {
 				JOptionPane.showMessageDialog(
 					this, "Broken file", "Error", JOptionPane.ERROR_MESSAGE
 				)

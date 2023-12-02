@@ -136,13 +136,9 @@ class Signer(
 		return CortegeSeven(hash, r, s, w, u1, u2, v)
 	}
 
-
 	private fun ByteArray.findLastIndex(): Int {
-		for (i in this.size - 2 downTo 0) {
-			if (this[i] == 59.toByte() && this[i + 1] == 59.toByte()) {
-				return i
-			}
-		}
-		return this.size
+		return (size - 2 downTo 0).firstOrNull { i ->
+			this[i] == 59.toByte() && this[i + 1] == 59.toByte()
+		} ?: size
 	}
 }

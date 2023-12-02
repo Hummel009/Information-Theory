@@ -16,10 +16,10 @@ class RabinBI(
 		val listPlain = File(input).readBytes().map { it.toInt() and 0xFF }
 
 		val listCipher = ArrayList<BigInteger>()
-		for (byte in listPlain) {
-			val m = byte.toBigInteger()
-			val c = (m * (m + b)) % n
-			listCipher.add(c)
+		listPlain.asSequence().map {
+			it.toBigInteger()
+		}.mapTo(listCipher) {
+			(it * (it + b)) % n
 		}
 		File(output).writeText(listCipher.toString())
 	}

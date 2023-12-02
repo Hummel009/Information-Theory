@@ -1,7 +1,5 @@
 package hummel
 
-import java.util.*
-
 class ColumnMethod(private var msg: String, private var key: String, private var gui: GUI) {
 	private val square = Array(msg.length + 3) { Array(key.length) { " " } }
 
@@ -21,6 +19,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 		return scanEncryptTable()
 	}
 
+	@Suppress("LoopToCallChain")
 	private fun scanEncryptTable(): String {
 		sortTable(1)
 		val sb = StringBuilder()
@@ -34,6 +33,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 		return sb.toString()
 	}
 
+	@Suppress("LoopToCallChain")
 	private fun scanDecryptTable(): String {
 		val sb = StringBuilder()
 		for (i in 3 until msg.length + 3) {
@@ -119,11 +119,10 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 
 		val sortable = IntArray(key.length)
 		val usedIDs = HashSet<Int>()
-		for (i in key.indices) {
-			sortable[i] = square[1][i].toInt()
-		}
 
-		Arrays.sort(sortable)
+		key.indices.forEach { i -> sortable[i] = square[1][i].toInt() }
+
+		sortable.sort()
 
 		for (i in key.indices) {
 			var newID = (sortable.indexOf(square[1][i].toInt()) + 1)
@@ -138,6 +137,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 		}
 	}
 
+	@Suppress("LoopToCallChain")
 	private fun sortTable(row: Int) {
 		for (i in 0 until square[0].size - 1) {
 			var minIndex = i
@@ -147,10 +147,10 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 				}
 			}
 			if (minIndex != i) {
-				for (k in square.indices) {
-					val temp = square[k][i]
-					square[k][i] = square[k][minIndex]
-					square[k][minIndex] = temp
+				for (item in square) {
+					val temp = item[i]
+					item[i] = item[minIndex]
+					item[minIndex] = temp
 				}
 			}
 		}

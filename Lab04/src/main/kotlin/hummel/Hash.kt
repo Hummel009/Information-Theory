@@ -9,9 +9,10 @@ object Hash {
 	fun getHashCharsEng(input: String, mod: BigInteger): BigInteger {
 		var h = 100.toBigInteger()
 
-		for (i in input.indices) {
-			val pos = ALPHABET_ENG.indexOf(input[i]).toBigInteger()
-			h = ((h + pos).pow(2)) % mod
+		input.asSequence().map {
+			ALPHABET_ENG.indexOf(it).toBigInteger()
+		}.forEach {
+			h = ((h + it).pow(2)) % mod
 		}
 
 		return h
@@ -20,9 +21,10 @@ object Hash {
 	fun getHashCharsRus(input: String, mod: BigInteger): BigInteger {
 		var h = 100.toBigInteger()
 
-		for (i in input.indices) {
-			val pos = ALPHABET_RUS.indexOf(input[i]).toBigInteger()
-			h = ((h + pos).pow(2)) % mod
+		input.asSequence().map {
+			ALPHABET_RUS.indexOf(it).toBigInteger()
+		}.forEach {
+			h = ((h + it).pow(2)) % mod
 		}
 
 		return h
@@ -31,9 +33,10 @@ object Hash {
 	fun getHashCharsAsc(input: String, mod: BigInteger): BigInteger {
 		var h = 100.toBigInteger()
 
-		for (i in input.indices) {
-			val pos = input[i].code.toBigInteger()
-			h = ((h + pos).pow(2)) % mod
+		input.asSequence().map {
+			it.code.toBigInteger()
+		}.forEach {
+			h = ((h + it).pow(2)) % mod
 		}
 
 		return h
@@ -42,9 +45,10 @@ object Hash {
 	fun getHashBinary(input: ByteArray, mod: BigInteger): BigInteger {
 		var h = 100.toBigInteger()
 
-		for (i in input.indices) {
-			val pos = input[i].toInt().toBigInteger()
-			h = ((h + pos).pow(2)) % mod
+		input.asSequence().map {
+			it.toInt().toBigInteger()
+		}.forEach {
+			h = ((h + it).pow(2)) % mod
 		}
 
 		return h
