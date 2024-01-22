@@ -1,3 +1,14 @@
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=code_smells)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=security_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=bugs)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=duplicated_lines_density)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=alert_status)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_index)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=ncloc)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+
 Мои лабораторные работы для BSUIR/БГУИР (белорусский государственный университет информатики и радиоэлектроники).
 
 Предмет - TI/ТИ (теория информации), ранее назывался KiOKI/КиОКИ.
