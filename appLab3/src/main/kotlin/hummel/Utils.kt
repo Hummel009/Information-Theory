@@ -26,7 +26,7 @@ object Utils {
 			y0 = y1
 			y1 = y2
 		}
-		return Pair(x1, y1)
+		return x1 to y1
 	}
 
 	fun advancedEuclidAlgorithm(a: Long, b: Long): Pair<Long, Long> {
@@ -52,7 +52,7 @@ object Utils {
 			y0 = yQ
 			yQ = y2
 		}
-		return Pair(yP, yQ)
+		return yP to yQ
 	}
 
 	fun powMod(a: Long, b: Long, m: Long): Long {

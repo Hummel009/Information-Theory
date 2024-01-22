@@ -30,21 +30,21 @@ class Encoder(
 
 			var keyByte = 0
 
-			currKey.toString().indices.asSequence().map { j ->
-				2.0.pow((bites - 1 - j)).toInt().toByte() * (currKey.toString()[j].digitToInt()).toByte()
+			"$currKey".indices.asSequence().map { j ->
+				2.0.pow((bites - 1 - j)).toInt().toByte() * ("$currKey"[j].digitToInt()).toByte()
 			}.forEach {
 				keyByte = (keyByte + it)
 			}
 
-			bufGenkey.append(currKey.toString())
+			bufGenkey.append("$currKey")
 			resBytes[i] = byte xor keyByte.toByte()
 			bufResFile.append(Integer.toBinaryString(resBytes[i].toInt() and 0xFF).format("%8s", "0") + " ")
 
 			currKey.clear()
 		}
 		File(pathToResFile).writeBytes(resBytes)
-		gui.srcFileBin = bufSrcFile.toString().replace(" ", "")
-		gui.keyStream = bufGenkey.toString().replace(" ", "")
-		gui.resFileBin = bufResFile.toString().replace(" ", "")
+		gui.srcFileBin = "$bufSrcFile".replace(" ", "")
+		gui.keyStream = "$bufGenkey".replace(" ", "")
+		gui.resFileBin = "$bufResFile".replace(" ", "")
 	}
 }

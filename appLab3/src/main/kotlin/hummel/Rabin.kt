@@ -14,7 +14,7 @@ class Rabin(
 		listPlain.mapTo(listCipher) {
 			(it * (it + b)) % n
 		}
-		File(output).writeText(listCipher.toString())
+		File(output).writeText("$listCipher")
 	}
 
 	fun decode() {

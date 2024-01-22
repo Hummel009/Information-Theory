@@ -44,7 +44,7 @@ class GUI : JFrame() {
 
 		if (inputPath.isEmpty() || outputPath.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Empty fields", "Error", JOptionPane.ERROR_MESSAGE)
-			return Pair(true, Pair("", ""))
+			return true to ("" to "")
 		}
 
 		val key = keyField.text.uppercase(Locale.getDefault()).filter { it in alphabet }
@@ -52,10 +52,10 @@ class GUI : JFrame() {
 
 		if (key.isEmpty() || msg.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Wrong data", "Error", JOptionPane.ERROR_MESSAGE)
-			return Pair(true, Pair("", ""))
+			return true to ("" to "")
 		}
 
-		return Pair(false, Pair(key, msg))
+		return false to (key to msg)
 	}
 
 	private fun encode(inputField: JTextField, outputField: JTextField, keyField: JTextField) {

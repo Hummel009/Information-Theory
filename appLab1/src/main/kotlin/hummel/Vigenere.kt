@@ -3,7 +3,7 @@ package hummel
 class Vigenere(private var msg: String, private var key: String, private var gui: GUI) {
 	fun encode(): String {
 		var newKey = key + msg
-		newKey = newKey.substring(0, newKey.length - key.length)
+		newKey = newKey.dropLast(key.length)
 		var encryptMsg = ""
 
 		for (x in msg.indices) {

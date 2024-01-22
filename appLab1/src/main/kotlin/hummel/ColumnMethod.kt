@@ -30,7 +30,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 				}
 			}
 		}
-		return sb.toString()
+		return "$sb"
 	}
 
 	@Suppress("LoopToCallChain")
@@ -43,7 +43,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 				}
 			}
 		}
-		return sb.toString()
+		return "$sb"
 	}
 
 	private fun fillEncryptTable() {
@@ -55,7 +55,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 
 		loop@ while (true) {
 			for (i in key.indices) {
-				square[currentLine][i] = msg[currentPos].toString()
+				square[currentLine][i] = "${msg[currentPos]}"
 				currentPos++
 				if (currentPos >= msg.length) {
 					break@loop
@@ -63,7 +63,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 				if (currentRule == key.length + 1) {
 					currentRule = 1
 				}
-				if (square[1][i] == currentRule.toString()) {
+				if (square[1][i] == "$currentRule") {
 					currentLine++
 					currentRule++
 					break
@@ -89,7 +89,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 				}
 				square[currentLine][i] = "*"
 				currentPos++
-				if (square[1][i] == currentRule.toString()) {
+				if (square[1][i] == "$currentRule") {
 					currentLine++
 					currentRule++
 					break
@@ -102,7 +102,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 		for (j in key.indices) {
 			for (i in 3 until msg.length + 3) {
 				if (square[i][j] == "*") {
-					square[i][j] = msg[count].toString()
+					square[i][j] = "${msg[count]}"
 					count++
 				}
 			}
@@ -112,7 +112,7 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 
 	private fun prepareTable() {
 		for (i in key.indices) {
-			square[0][i] = key[i].toString()
+			square[0][i] = "${key[i]}"
 			square[1][i] = gui.alphabet.indexOf(square[0][i]).toString()
 			square[2][i] = (i + 1).toString()
 		}
@@ -127,11 +127,11 @@ class ColumnMethod(private var msg: String, private var key: String, private var
 		for (i in key.indices) {
 			var newID = (sortable.indexOf(square[1][i].toInt()) + 1)
 			if (!usedIDs.contains(newID)) {
-				square[1][i] = newID.toString()
+				square[1][i] = "$newID"
 				usedIDs.add(newID)
 			} else {
 				newID++
-				square[1][i] = newID.toString()
+				square[1][i] = "$newID"
 				usedIDs.add(newID)
 			}
 		}

@@ -3,6 +3,8 @@ package hummel
 import java.io.File
 import java.math.BigInteger
 
+private const val pattern = """^(.*);;[(](\d+), (\d+)[)]$"""
+
 class Signer(
 	private var inputPath: String,
 	private var outputPath: String,
@@ -50,7 +52,7 @@ class Signer(
 					sb.append(msg)
 					sb.append(";;")
 					sb.append("($r, $s)")
-					File(outputPath).writeText(sb.toString())
+					File(outputPath).writeText("$sb")
 				}
 
 				SignMode.BIN -> {
@@ -73,7 +75,7 @@ class Signer(
 		when (arg) {
 			SignMode.RUS -> {
 				val fileContents = File(inputPath).readText().uppercase()
-				val regex = Regex("""^(.*);;\((\d+), (\d+)\)$""")
+				val regex = Regex(pattern)
 				val matchResult = regex.find(fileContents)!!
 
 				msg = matchResult.groupValues[1]
@@ -85,7 +87,7 @@ class Signer(
 
 			SignMode.ENG -> {
 				val fileContents = File(inputPath).readText().uppercase()
-				val regex = Regex("""^(.*);;\((\d+), (\d+)\)$""")
+				val regex = Regex(pattern)
 				val matchResult = regex.find(fileContents)!!
 
 				msg = matchResult.groupValues[1]
@@ -97,7 +99,7 @@ class Signer(
 
 			SignMode.ASC -> {
 				val fileContents = File(inputPath).readText().uppercase()
-				val regex = Regex("""^(.*);;\((\d+), (\d+)\)$""")
+				val regex = Regex(pattern)
 				val matchResult = regex.find(fileContents)!!
 
 				msg = matchResult.groupValues[1]
