@@ -1,13 +1,13 @@
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=code_smells)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=security_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=bugs)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=duplicated_lines_density)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=alert_status)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_index)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=ncloc)](https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory)
+[![Code Smells][code_smells_badge]][code_smells_link]
+[![Maintainability Rating][maintainability_rating_badge]][maintainability_rating_link]
+[![Security Rating][security_rating_badge]][security_rating_link]
+[![Bugs][bugs_badge]][bugs_link]
+[![Vulnerabilities][vulnerabilities_badge]][vulnerabilities_link]
+[![Duplicated Lines (%)][duplicated_lines_density_badge]][duplicated_lines_density_link]
+[![Reliability Rating][reliability_rating_badge]][reliability_rating_link]
+[![Quality Gate Status][quality_gate_status_badge]][quality_gate_status_link]
+[![Technical Debt][technical_debt_badge]][technical_debt_link]
+[![Lines of Code][lines_of_code_badge]][lines_of_code_link]
 
 Мои лабораторные работы для BSUIR/БГУИР (белорусский государственный университет информатики и радиоэлектроники).
 
@@ -70,3 +70,45 @@
 
 Для возведения в степень использовать быстрый алгоритм возведения в степень по модулю.
 При нахождении обратного элемента s−1mod q или k−1 mod q использовать малую теорему Ферма в виде: s−1mod q = sq-2 mod q.
+
+<!----------------------------------------------------------------------------->
+
+[code_smells_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=code_smells
+
+[code_smells_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[maintainability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_rating
+
+[maintainability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[security_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=security_rating
+
+[security_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[bugs_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=bugs
+
+[bugs_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[vulnerabilities_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=vulnerabilities
+
+[vulnerabilities_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[duplicated_lines_density_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=duplicated_lines_density
+
+[duplicated_lines_density_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[reliability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=reliability_rating
+
+[reliability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[quality_gate_status_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=alert_status
+
+[quality_gate_status_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[technical_debt_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=sqale_index
+
+[technical_debt_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
+
+[lines_of_code_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Information-Theory&metric=ncloc
+
+[lines_of_code_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Information-Theory
