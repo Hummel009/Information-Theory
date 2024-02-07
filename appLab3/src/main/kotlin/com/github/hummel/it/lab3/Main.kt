@@ -1,4 +1,4 @@
-package hummel
+package com.github.hummel.it.lab3
 
 import com.formdev.flatlaf.FlatLightLaf
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme
@@ -102,21 +102,22 @@ class GUI : JFrame() {
 			val inputPath = inputField.text
 			val outputPath = outputField.text
 
-			if (fast) {
+			val machine = if (fast) {
 				val keyP = keyFieldP.text.toInt()
 				val keyQ = keyFieldQ.text.toInt()
 				val keyB = keyFieldB.text.toInt()
 
-				val machine = Rabin(keyP, keyQ, keyB, inputPath, outputPath)
-				machine.decode()
+				DefaultRabin(keyP, keyQ, keyB, inputPath, outputPath)
 			} else {
 				val keyP = keyFieldP.text.toBigInteger()
 				val keyQ = keyFieldQ.text.toBigInteger()
 				val keyB = keyFieldB.text.toBigInteger()
 
-				val machineBI = RabinBI(keyP, keyQ, keyB, inputPath, outputPath)
-				machineBI.decode()
+				BigIntegerRabin(keyP, keyQ, keyB, inputPath, outputPath)
 			}
+
+			machine.decode()
+
 			JOptionPane.showMessageDialog(this, "Complete", "Message", JOptionPane.INFORMATION_MESSAGE)
 		}
 	}
@@ -134,21 +135,22 @@ class GUI : JFrame() {
 			val inputPath = inputField.text
 			val outputPath = outputField.text
 
-			if (fast) {
+			val machine = if (fast) {
 				val keyP = keyFieldP.text.toInt()
 				val keyQ = keyFieldQ.text.toInt()
 				val keyB = keyFieldB.text.toInt()
 
-				val machine = Rabin(keyP, keyQ, keyB, inputPath, outputPath)
-				machine.encode()
+				DefaultRabin(keyP, keyQ, keyB, inputPath, outputPath)
 			} else {
 				val keyP = keyFieldP.text.toBigInteger()
 				val keyQ = keyFieldQ.text.toBigInteger()
 				val keyB = keyFieldB.text.toBigInteger()
 
-				val machineBI = RabinBI(keyP, keyQ, keyB, inputPath, outputPath)
-				machineBI.encode()
+				BigIntegerRabin(keyP, keyQ, keyB, inputPath, outputPath)
 			}
+
+			machine.encode()
+
 			JOptionPane.showMessageDialog(this, "Complete", "Message", JOptionPane.INFORMATION_MESSAGE)
 		}
 	}

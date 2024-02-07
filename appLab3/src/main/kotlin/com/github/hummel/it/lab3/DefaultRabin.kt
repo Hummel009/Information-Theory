@@ -1,13 +1,13 @@
-package hummel
+package com.github.hummel.it.lab3
 
 import java.io.File
 
-class Rabin(
+class DefaultRabin(
 	private var p: Int, private var q: Int, private var b: Int, private var input: String, private var output: String
-) {
+) : Rabin {
 	private val n = p * q
 
-	fun encode() {
+	override fun encode() {
 		val listPlain = File(input).readBytes().map { it.toInt() and 0xFF }
 
 		val listCipher = ArrayList<Int>()
@@ -17,7 +17,7 @@ class Rabin(
 		File(output).writeText("$listCipher")
 	}
 
-	fun decode() {
+	override fun decode() {
 		val line = File(input).readText()
 		val listCipher = line.substring(1, line.length - 1).split(", ").map { it.toInt() }
 		val listDecipher = ArrayList<Short>()

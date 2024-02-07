@@ -1,4 +1,4 @@
-package hummel
+package com.github.hummel.it.lab2
 
 class Register(numbers: IntArray, initial: String) {
 	private val powers: IntArray = numbers.copyOf()

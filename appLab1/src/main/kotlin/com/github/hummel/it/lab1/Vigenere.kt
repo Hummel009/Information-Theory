@@ -1,4 +1,4 @@
-package hummel
+package com.github.hummel.it.lab1
 
 class Vigenere(private var msg: String, private var key: String, private var gui: GUI) {
 	fun encode(): String {

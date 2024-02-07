@@ -1,4 +1,4 @@
-package hummel
+package com.github.hummel.it.lab4
 
 import java.io.File
 import java.math.BigInteger

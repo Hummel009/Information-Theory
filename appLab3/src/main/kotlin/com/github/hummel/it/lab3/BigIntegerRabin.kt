@@ -1,18 +1,18 @@
-package hummel
+package com.github.hummel.it.lab3
 
 import java.io.File
 import java.math.BigInteger
 
-class RabinBI(
+class BigIntegerRabin(
 	private var p: BigInteger,
 	private var q: BigInteger,
 	private var b: BigInteger,
 	private var input: String,
 	private var output: String
-) {
+) : Rabin {
 	private val n = p * q
 
-	fun encode() {
+	override fun encode() {
 		val listPlain = File(input).readBytes().map { it.toInt() and 0xFF }
 
 		val listCipher = ArrayList<BigInteger>()
@@ -24,7 +24,7 @@ class RabinBI(
 		File(output).writeText("$listCipher")
 	}
 
-	fun decode() {
+	override fun decode() {
 		val line = File(input).readText()
 		val listCipher = line.substring(1, line.length - 1).split(", ").map { it.toBigInteger() }
 		val listDecipher = ArrayList<Int>()

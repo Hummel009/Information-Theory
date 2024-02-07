@@ -1,4 +1,4 @@
-package hummel
+package com.github.hummel.it.lab2
 
 import java.io.File
 import kotlin.experimental.xor
