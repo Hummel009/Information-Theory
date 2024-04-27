@@ -82,7 +82,7 @@ class GUI : JFrame() {
 					throw Exception()
 				}
 			}
-		} catch (e: Exception) {
+		} catch (_: Exception) {
 			JOptionPane.showMessageDialog(this, "Wrong data", "Error", JOptionPane.ERROR_MESSAGE)
 			return true
 		}
